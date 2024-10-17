@@ -9,10 +9,33 @@ function cardPersonaje(data) {
           </div>`
 }
 
-function renderizarCartas(cartas, app) {
+/* function renderizarCartas(cartas, app) {
   cartas.forEach(carta => {
     app.innerHTML += carta
   })
+} */
+
+
+/* function* renderizarCartas() {
+  let cartaPersonajes = document.getElementById('app')
+  while(true) {
+    yield cartaPersonajes.addEventListener('click', function() {
+      console.log('Funcion')
+      // cartaPokemon.parentNode.innerHTML += generadorCarta //sobre escribe el HTML
+      cardPersonajes.parentNode.insertAdjacentHTML("beforeend", cardPersonaje)
+    })
+  }
 }
+ */
+
+
+function* renderizarCartas(personajes, container) {
+  for (let personaje of personajes) {
+    yield container.insertAdjacentHTML("beforeend", cardPersonaje(personaje));
+  }
+}
+
+
+
 
 export { cardPersonaje, renderizarCartas }
