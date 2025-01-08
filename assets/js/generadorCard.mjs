@@ -34,9 +34,10 @@ function getCircleColor(id) {
 // Función para generar una tarjeta HTML con los datos de un personaje
 function createCard(person, id) {
   const circleColor = getCircleColor(id); // Determinar el color del círculo
+  console.log(id)
 
   const card = document.createElement("div");
-  card.className = "col-3"; // Clases Bootstrap para columnas
+  card.className = "col-3 py-3"; // Clases Bootstrap para columnas
 
   card.innerHTML = `
     <div class="card shadow rounded-3">
@@ -48,6 +49,7 @@ function createCard(person, id) {
       </div>
     </div>
   `;
+
 
   return card;
 }

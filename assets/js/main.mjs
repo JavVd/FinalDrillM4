@@ -22,7 +22,7 @@ async function handleSectionHover(event) {
     const person = await fetchPersonById(rangeData.currentId);
 
     // Generar una nueva card
-    const newCard = createCard(person);
+    const newCard = createCard(person, rangeData.currentId);
 
     // Insertar la card a la derecha de la card inicial
     target.parentElement.appendChild(newCard);
